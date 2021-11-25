@@ -10,7 +10,7 @@
     <title>G2 Roster Page</title>
 </head>
 <body>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col">
             <h1>G2 Crowd Team Roster</h1>
             <hr>
@@ -30,7 +30,7 @@
                     <p class="card-text m-0 d-flex align-items-center">
                         <small class=""><strong>Want to work with {{  e.name }}?</strong></small>
                         <button class="btn ps-3" id="vote-button-{{ e.id }}" onclick="addVote('{{ e.id }}')">
-                            <img src="/static/images/thumbs-up.svg" alt="thumbs up icon" class="filter-green" width="15px" height="15px"> Yes!
+                            <img src="/static/images/thumbs-up.svg" alt="thumbs up icon" class="filter-blue" width="15px" height="15px"> Yes!
                         </button>
                     </p>
                     <p class="card-text"><small><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong> people have said yes!</small></p>

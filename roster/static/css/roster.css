@@ -10,11 +10,10 @@
 }
 
 .btn:focus {
-    color: #3398B9;
     box-shadow: none;
-}
+} 
 
-.filter-green{
+.filter-blue{
     filter: invert(48%) sepia(69%) saturate(492%) hue-rotate(148deg) brightness(96%) contrast(79%);
 }
 
@@ -26,6 +25,7 @@ h1 {
     color: #E6623F;
     font-weight: 300;
     font-family: Roboto, sans-serif;
+    font-size: 3.5rem;
 }
 
 h3, h5, p {
