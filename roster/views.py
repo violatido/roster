@@ -26,3 +26,15 @@ def load_roster(request):
     return render(request, 'roster/index.html', context)
 
 
+def update_vote_count(request):
+    """ Receives a new vote for one specific employee and updates that employee object's vote count.
+
+    The new vote count is returned.
+    """
+    employee = Employee.objects.get(id=request.GET.get("employee_id"))
+    employee.vote_count += 1
+    employee.save()
+
+    data = {'success': True, 'vote_count': employee.vote_count}
+    return JsonResponse(data)
+
