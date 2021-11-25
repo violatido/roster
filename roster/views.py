@@ -1,8 +1,8 @@
-from django.http import HttpResponse
 import urllib.request
 import json
 from django.shortcuts import render
 from django.http import JsonResponse
+from roster.models import Employee
 
 
 def load_roster(request):
@@ -11,7 +11,17 @@ def load_roster(request):
     infile = urllib.request.urlopen(page).read().decode()
     data = json.loads(infile)
 
-    context = {"data": data}
+    employee_names = [e.name for e in Employee.objects.all()]
+    employee_data = list() 
+
+    for d in data:
+        # If the employee in JSON string has not been made into an Employee object, create employee object
+        if d["name"] not in employee_names:
+            Employee.objects.create(name=d["name"], title=d["title"], bio=d["bio"], image_url=d["image_url"], vote_count=0)
+        # Grab the employee object of all employees in the JSON string, add to employee_data list
+        employee_data.append(Employee.objects.get(name=d["name"]))
+
+    context = {"employee_roster": employee_data}
 
     return render(request, 'roster/index.html', context)
 
