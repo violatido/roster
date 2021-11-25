@@ -1,0 +1,27 @@
+.btn {
+    color: #3398B9;
+}
+
+.btn:hover {
+    color: #3398B9;
+    transform: scale(1.25);
+    transition: .3s ease;
+}
+
+.btn:focus {
+    color: #3398B9;
+    box-shadow: none;
+}
+
+
+.card {
+    border: none;
+}
+
+h1 {
+    color: #E6623F;
+}
+
+h3, h5, p {
+    color: #565656
+}
