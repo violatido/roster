@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 .btn {
     color: #3398B9;
 }
@@ -20,8 +21,12 @@
 
 h1 {
     color: #E6623F;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
 }
 
 h3, h5, p {
-    color: #565656
+    color: #565656;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
 }
