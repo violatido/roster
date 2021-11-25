@@ -14,6 +14,9 @@
     box-shadow: none;
 }
 
+.filter-green{
+    filter: invert(48%) sepia(69%) saturate(492%) hue-rotate(148deg) brightness(96%) contrast(79%);
+}
 
 .card {
     border: none;
