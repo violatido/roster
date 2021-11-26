@@ -35,11 +35,9 @@ def update_vote_count(request):
             employee = Employee.objects.get(id=request.GET.get("employee_id"))
             employee.vote_count += 1
             employee.save()
-    except:
+    except ValueError:
         # if no employee ID is received in request, employee vote count cannot be updated
         return HttpResponse("That request could not be completed. Please try again.")
-
-    #TODO: crate a user class that saves voter info to prevent double voting after page refresh, if wanted
 
     data = {'success': True, 'vote_count': employee.vote_count}
     return JsonResponse(data)
