@@ -1,9 +1,8 @@
 import urllib.request
 import json
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from roster.models import Employee
-
 
 def load_roster(request):
     url = "https://coding-assignment.g2crowd.com/"
@@ -13,8 +12,7 @@ def load_roster(request):
 
     # use the name given in the JSON as a unique identifier
     employee_names = [e.name for e in Employee.objects.all()]
-    employee_data = list() 
-
+    employee_data = list()
     for d in data:
         # If the employee in JSON string has not been made into an Employee object, create employee object
         if d["name"] not in employee_names:
@@ -23,7 +21,6 @@ def load_roster(request):
         employee_data.append(Employee.objects.get(name=d["name"]))
 
     context = {"employee_roster": employee_data}
-
     return render(request, 'roster/index.html', context)
 
 
@@ -33,10 +30,16 @@ def update_vote_count(request):
     The new vote count is returned.
     """
     # TODO: change the GET request to PUT request
-    employee = Employee.objects.get(id=request.GET.get("employee_id"))
-    employee.vote_count += 1
-    employee.save()
+    try:
+        if request.GET.get("employee_id"):
+            employee = Employee.objects.get(id=request.GET.get("employee_id"))
+            employee.vote_count += 1
+            employee.save()
+    except:
+        # if no employee ID is received in request, employee vote count cannot be updated
+        return HttpResponse("That request could not be completed. Please try again.")
+
+    #TODO: crate a user class that saves voter info to prevent double voting after page refresh, if wanted
 
     data = {'success': True, 'vote_count': employee.vote_count}
     return JsonResponse(data)
-

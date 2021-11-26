@@ -35,8 +35,9 @@
                                     <img src="/static/images/thumbs-up.svg" alt="thumbs up icon" class="filter-blue" width="15px" height="15px"> Yes!
                                 </button>
                             </p>
+                            <!-- Account grammar based on how many votes -->
                             {% if e.vote_count == 1 %}
-                            <p class="card-text"><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong><span id="vote-text-{{ e.id }}"> person said yes!</span></p>
+                            <p class="card-text"><strong id = "vote-count-{{ e.id }}">1</strong><span id="vote-text-{{ e.id }}"> person said yes!</span></p>
                             {% else %}
                             <p class="card-text"><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong><span id="vote-text-{{ e.id }}"> people have said yes!</span></p>
                             {% endif %}
