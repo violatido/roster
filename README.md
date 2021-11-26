@@ -38,5 +38,5 @@ python3 manage.py migrate
 ```bash
 python3 manage.py runserver
 ```
-#### Navigate to http://localhost:8000/roster in your browser
+#### Navigate to http://localhost:8000 in your browser
 

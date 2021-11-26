@@ -10,54 +10,57 @@
     <title>G2 Roster Page</title>
 </head>
 <body>
-    <div class="row mt-3">
+    <div class="row m-3">
         <div class="col">
             <h1>G2 Crowd Team Roster</h1>
             <hr>
         </div>
     </div>
     {% for e in employee_roster %}
-    <div class="card mb-3">
-        <div class="row g-0">
-            <div class="col-sm-4 d-flex justify-content-center align-items-center">
-                <img src="{{ e.image_url}}" style="max-height: 300px;" class="img-fluid rounded-start" alt="Picture of {{ e.name }}">
-            </div>
-            <div class="col-sm-8">
-                <div class="card-body">
-                    <h3 class="card-title">{{ e.name }}</h3>
-                    <h5 class="card-title">{{ e.title }}</h5>
-                    <p class="card-text">{{ e.bio }}</p>
-                    <p class="card-text m-0 d-flex align-items-center">
-                        <small class=""><strong>Want to work with {{  e.name }}?</strong></small>
-                        <button class="btn ps-3" id="vote-button-{{ e.id }}" onclick="addVote('{{ e.id }}')">
-                            <img src="/static/images/thumbs-up.svg" alt="thumbs up icon" class="filter-blue" width="15px" height="15px"> Yes!
-                        </button>
-                    </p>
-                    <p class="card-text"><small><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong> people have said yes!</small></p>
+    <div class="row">
+        <div class="col">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-sm-4 d-flex justify-content-center align-items-center">
+                        <img src="{{ e.image_url}}" style="max-height: 300px;" class="img-fluid rounded-start" alt="Picture of {{ e.name }}">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ e.name }}</h3>
+                            <h5 class="card-title">{{ e.title }}</h5>
+                            <p class="card-text">{{ e.bio }}</p>
+                            <p class="card-text m-0 d-flex align-items-center">
+                                <small class=""><strong>Want to work with {{  e.name }}?</strong></small>
+                                <button class="btn ps-3" id="vote-button-{{ e.id }}" onclick="addVote('{{ e.id }}')">
+                                    <img src="/static/images/thumbs-up.svg" alt="thumbs up icon" class="filter-blue" width="15px" height="15px"> Yes!
+                                </button>
+                            </p>
+                            <p class="card-text"><small><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong> people have said yes!</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr>
-    </div>
-    
-    {% endfor %}
-    <!-- Created an Ilana card for fun! -->
-    <div class="card mb-3">
-        <div class="row g-0">
-            <div class="col-sm-4 d-flex justify-content-center align-items-center">
-                <img src="/static/images/ilana-bitmoji.png" style="max-height: 300px;" class="img-fluid rounded-start" alt="Picture of Ilana Mercer">
-            </div>
-            <div class="col-sm-8">
-                <div class="card-body">
-                    <h3 class="card-title display-6">Ilana Mercer</h3>
-                    <h5 class="card-title">Candidate for Jr. Software Engineer at G2</h5>
-                    <p class="card-text">
-                        A former professional violist, Ilana is a software engineer who joined the tech world because of the endless opportunities it has for
-                        positive change. What excites Ilana most about working for G2 is the emphasis on mentorship, the thoughtful onboarding system, 
-                        and the supportive environment that the software engineers cultivate! Likes: baking, growing house plants, experiencing 
-                        the random things that seem to only happen in NYC (e.g. unexpected bodega cats). Dislikes: dill and most bugs 
-                        (especially the ones that like to eat her house plants).
-                    </p>
+            <hr class="ms-4 me-4">
+            {% endfor %}
+            <!-- Created an Ilana card just for fun! -->
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-sm-4 d-flex justify-content-center align-items-center">
+                        <img src="/static/images/ilana-bitmoji.png" style="max-height: 300px;" class="img-fluid rounded-start" alt="Picture of Ilana Mercer">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="card-body">
+                            <h3 class="card-title display-6">Ilana Mercer</h3>
+                            <h5 class="card-title">Candidate for Jr. Software Engineer at G2</h5>
+                            <p class="card-text">
+                                A former professional violist, Ilana is a software engineer who joined the tech world because of the endless opportunities it has for
+                                positive change. What excites Ilana most about working for G2 is the emphasis on mentorship, the thoughtful onboarding system, 
+                                and the supportive environment that the software engineers cultivate! Likes: baking, growing house plants, experiencing 
+                                the random things that seem to only happen in NYC (e.g. unexpected bodega cats). Dislikes: dill and most bugs 
+                                (especially the ones that like to eat her house plants).
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

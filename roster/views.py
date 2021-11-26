@@ -11,6 +11,7 @@ def load_roster(request):
     infile = urllib.request.urlopen(page).read().decode()
     data = json.loads(infile)
 
+    # use the name given in the JSON as a unique identifier
     employee_names = [e.name for e in Employee.objects.all()]
     employee_data = list() 
 
@@ -31,6 +32,7 @@ def update_vote_count(request):
 
     The new vote count is returned.
     """
+    # TODO: change the GET request to PUT request
     employee = Employee.objects.get(id=request.GET.get("employee_id"))
     employee.vote_count += 1
     employee.save()

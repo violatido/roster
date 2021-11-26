@@ -1,6 +1,6 @@
 function addVote(id){
   $.ajax ({
-    url: '/roster/update-vote-count',
+    url: '/update-vote-count',
     type: "GET",
     data: {
       employee_id : id,
