@@ -36,9 +36,9 @@
                                 </button>
                             </p>
                             {% if e.vote_count == 1 %}
-                            <p class="card-text"><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong><span id="vote-text"> person said yes!</span></p>
+                            <p class="card-text"><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong><span id="vote-text-{{ e.id }}"> person said yes!</span></p>
                             {% else %}
-                            <p class="card-text"><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong><span id="vote-text"> people have said yes!</span></p>
+                            <p class="card-text"><strong id = "vote-count-{{ e.id }}">{{ e.vote_count }}</strong><span id="vote-text-{{ e.id }}"> people have said yes!</span></p>
                             {% endif %}
                         </div>
                     </div>

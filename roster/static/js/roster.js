@@ -9,10 +9,13 @@ function addVote(id){
       document.getElementById(`vote-button-${id}`).innerHTML = "Vote cast!";
       document.getElementById(`vote-button-${id}`).disabled = true;
       document.getElementById(`vote-count-${id}`).innerHTML = `${data["vote_count"]}`;
-      if (data["vote_count"] == 1) {
-        document.getElementById("vote-text").innerHTML = " person said yes!"
+      console.log(data["vote_count"])
+      if (data["vote_count"] != 1) {
+        (console.log(1))
+        document.getElementById(`vote-text-${id}`).innerText = " people have said yes!"
       } else {
-        document.getElementById("vote-text").innerText = " people have said yes!"
+        (console.log(2))
+        document.getElementById(`vote-text-${id}`).innerText = " person has said yes!"
       }
     }
   })
