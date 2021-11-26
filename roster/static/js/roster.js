@@ -9,10 +9,10 @@ function addVote(id){
       document.getElementById(`vote-button-${id}`).innerHTML = "Vote cast!";
       document.getElementById(`vote-button-${id}`).disabled = true;
       document.getElementById(`vote-count-${id}`).innerHTML = `${data["vote_count"]}`;
-      if (data["vote_count"] === 1) {
-        document.getElementById(`vote-text`).innerHTML = "person said yes!"
+      if (data["vote_count"] == 1) {
+        document.getElementById("vote-text").innerHTML = " person said yes!"
       } else {
-        document.getElementById(`vote-text`).innerHTML = "people have said yes!"
+        document.getElementById("vote-text").innerText = " people have said yes!"
       }
     }
   })
