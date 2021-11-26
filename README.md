@@ -9,6 +9,10 @@
 ``` bash
 git clone 'https://github.com/violatido/roster'
 ```
+#### CD in Roster directory
+```bash
+cd roster
+```
 #### Create a virtual environment
 ``` bash
 python3 -m venv env
@@ -20,15 +24,6 @@ source env/bin/activate
 #### Install the requirements
 ```bash
 pip3 install -r requirements.txt
-```
-#### Include the following in settings.py within the G2takehome folder
-```bash
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'db.sqlite3'),
-    }
-}
 ```
 #### Create the database
 ```bash
